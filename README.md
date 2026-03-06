@@ -116,7 +116,6 @@ product-kit/
 │   │   ├── product_constitution.md    # Core values, pillars, trade-offs
 │   │   ├── active_specs/              # Active project specifications
 │   │   │   ├── data_scientist_git_hypothesis.md
-│   │   │   ├── freddie_mac_chatbot_hypothesis.md
 │   │   │   ├── workout_logger_hypothesis.md
 │   │   │   └── workout_logger_prd.md
 │   │   └── templates/                 # Reusable specification templates
@@ -235,7 +234,6 @@ Starting points for specifications at each stage:
 ### **Active Specifications**
 Real projects in various stages:
 - **Data Scientist Git Tool** (Discovery stage)
-- **Freddie Mac Chatbot** (In progress)
 - **Workout Logger** (In Review)
 
 **Directory:** `.specify/.product-kit/active_specs/`
@@ -347,11 +345,6 @@ Helping data scientists feel comfortable with Git through training, tooling, or 
 - **Files:** `active_specs/data_scientist_git_hypothesis.md`
 
 ### **Freddie Mac Chatbot** (In Progress)
-An AI chatbot for mortgage and home buying guidance.
-- **Status:** Hypothesis and PRD in progress
-- **Files:** `active_specs/freddie_mac_chatbot_hypothesis.md`
-
----
 
 ## 🛠️ Customization & Extension
 
