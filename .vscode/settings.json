@@ -8,7 +8,11 @@
     },
     "chat.tools.terminal.autoApprove": {
         ".specify/scripts/bash/": true,
-        ".specify/scripts/powershell/": true
+        ".specify/scripts/powershell/": true,
+        "/^cmd /c move \"\\.product-kit\\\\templates\\\\hypothesis\\.md\" \"\\.product-kit\\\\templates\\\\hypothesis-template\\.md\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
     }
 }
 

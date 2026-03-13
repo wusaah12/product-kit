@@ -12,7 +12,7 @@ First, organize your local repository so the AI agent (Cursor, Claude Code, or C
 2. **Move your Files:**
 * `.product-kit/product_constitution.md`
 * `.product-kit/templates/prd_template.md`
-* `.product-kit/templates/hypothesis.md`
+* `.product-kit/templates/hypothesis-template.md`
 
 
 3. **The "Active" Folder:** Create a folder called `active_specs/`. This is where the actual living documents for your current feature will live.
@@ -26,7 +26,7 @@ Before writing a PRD, you must validate the idea.
 **The Action:** Create a new file `active_specs/feature_name_hypothesis.md` using your template.
 **The Manual Command (to your AI):**
 
-> "Read `.product-kit/product_constitution.md` and `.product-kit/templates/hypothesis.md`. Based on these, help me fill out a hypothesis for [Feature Idea]. Look at my existing `discovery/` folder for context. Do not proceed to a PRD until we agree on the Success Metrics."
+> "Read `.product-kit/product_constitution.md` and `.product-kit/templates/hypothesis-template.md`. Based on these, help me fill out a hypothesis for [Feature Idea]. Look at my existing `discovery/` folder for context. Do not proceed to a PRD until we agree on the Success Metrics."
 
 ---
 

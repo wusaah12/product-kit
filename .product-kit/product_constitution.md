@@ -31,7 +31,7 @@ SYNC IMPACT REPORT: Constitution v1.0.0 → v1.1.0
 ================================================================================
 -->
 
-# ProductKit Constitution
+# Product-Kit Constitution
 
 ## Core Principles
 
@@ -40,6 +40,8 @@ Real user needs—captured through interviews, research, or usage patterns—are
 
 ### II. Clear Handoff Protocol
 The handoff from customer insight → product specification → engineering must be seamless and unambiguous. Specifications are the contract between roles. All ambiguity must be resolved before handoff; incomplete specs block progress and create waste.
+
+**What "seamless" means in practice**: A developer can read the spec and begin implementation within 15 minutes without asking clarifying questions. A designer can extract acceptance criteria and create test cases directly from the spec.
 
 ### III. Actionable & Testable Specifications
 Every requirement must be concrete, measurable, and implementable. Vague language ("user-friendly," "intuitive," "fast") is forbidden without definition. Acceptance criteria must be specific enough that a developer or QA engineer can verify completion without asking clarifying questions.
@@ -52,13 +54,13 @@ Requirements evolve through feedback loops with real users. Initial specs are va
 
 ## Core Product Pillars
 
-These are the **non-negotiables**. If a feature doesn't support one of these, it is out of scope.
+These are the **non-negotiables**. Every feature must directly enable one or more of these pillars. If a feature cannot deliver measurable progress toward a pillar, it is out of scope.
 
 **Pillar 1: Crystal-Clear Specifications**  
-Ambiguity is waste. Every spec must eliminate rework and confusion between roles. If a requirement is unclear, the work stops until clarity is achieved. Speed of delivery is secondary to correctness of the handoff.
+Ambiguity is waste. Every spec must eliminate rework and confusion between roles. Success: A developer can implement without asking clarifying questions. If a requirement is unclear, the work stops until clarity is achieved. Speed of delivery is secondary to correctness of the handoff.
 
 **Pillar 2: Frictionless Handoffs**  
-The tool exists to eliminate friction in the idea-to-product process. Every interaction, every workflow, and every export should remove a blocker—not add one. A 2-hour learning curve kills adoption.
+The tool exists to eliminate friction in the idea-to-product process. Every interaction, every workflow, and every export should remove a blocker—not add one. Success: New users complete their first full workflow (insight → spec → task list) in under 30 minutes without tutorials. A 2-hour learning curve kills adoption.
 
 **Pillar 3: Complete Audit Trail**  
 Every decision, change, and assumption must be traceable to its source (customer insight, research, team decision). This is non-negotiable for accountability and learning.
@@ -68,25 +70,32 @@ Every decision, change, and assumption must be traceable to its source (customer
 The following rules govern how we make hard choices when principles conflict:
 
 **Clarity EVEN OVER Feature Richness**  
-We choose fewer features that work perfectly over a bloated feature set that confuses users. If a feature compromises clarity, it doesn't ship.
+We choose fewer features that work perfectly over a bloated feature set that confuses users. If a feature compromises clarity, it doesn't ship.  
+*Decision Rule*: When choosing between a complex feature and a simpler alternative, always choose the one that users can learn faster. Example: Remove an advanced filtering option if it clutters the spec interface.
 
 **Traceability EVEN OVER Speed**  
-We sacrifice build speed to maintain a complete audit trail. A fast delivery that loses the "why" is a failure.
+We sacrifice build speed to maintain a complete audit trail. A fast delivery that loses the "why" is a failure.  
+*Decision Rule*: Slow down to document the business reason for every change. A feature added "because the CEO asked" must explain why that customer insight matters. Speed without reasoning is debt.
 
 **User Agency EVEN OVER Enforced Process**  
-Users can deviate from our recommended workflow if they have good reason. We guide but do not lock. Opinionated defaults, but not rigid enforcement.
+Users can deviate from our recommended workflow if they have good reason. We guide but do not lock. Opinionated defaults, but not rigid enforcement.  
+*Decision Rule*: If users want to skip a step or reorder the workflow, let them—but warn them about consequences (e.g., "Specs without insights may lack context").
 
 ## Voice & Tone
 
-ProductKit speaks in a **friendly yet professional and precise** manner:
-- **Accessible**: Avoid jargon where possible; explain product management concepts clearly.
-- **Direct**: Say exactly what you mean; respect the user's intelligence and time.
-- **Encouraging**: Help users feel confident moving ideas from concept to production.
-- **Precise**: Numbers, timelines, and criteria are exact. Ambiguity is the enemy.
+Product-Kit speaks in a **friendly yet professional and precise** manner:
+- **Accessible**: Avoid jargon where possible; explain product management concepts clearly.  
+  *Example*: "Link customer research to this requirement" instead of "Trace this to validated insights."
+- **Direct**: Say exactly what you mean; respect the user's intelligence and time.  
+  *Example*: "This feature is out of scope because it conflicts with Clarity Pillar" instead of "This doesn't quite fit our vision."
+- **Encouraging**: Help users feel confident moving ideas from concept to production.  
+  *Example*: "Good catch—let's refine this with one more customer interview" instead of "This requirement is too vague."
+- **Precise**: Numbers, timelines, and criteria are exact. Ambiguity is the enemy.  
+  *Example*: "Response time < 500ms" instead of "Should load fast."
 
 ## Target Personas
 
-ProductKit serves anyone bridging the gap between idea and product:
+Product-Kit serves anyone bridging the gap between idea and product:
 
 **Primary User: The "Scrappy Product Maker"**  
 A developer, designer, or PM running an early-stage idea alone or with a small team. Moves fast, needs to say "no" to scope creep, and hates ambiguous requirements slowing down implementation. Willing to learn one clear workflow if it saves them 10 hours/week.
@@ -97,7 +106,8 @@ A developer, designer, or PM running an early-stage idea alone or with a small t
 - **Entrepreneurs & Makers**: Who have ideas and want to navigate the path to a shipped product without confusion or rework.
 
 **Anti-Persona: The "Enterprise Permission Manager"**  
-Large organizations seeking role-based access controls, complex approval workflows, compliance matrices, and 47 customizable fields. Do not build for this user unless they overlap with Primary User needs. If a feature serves only Anti-Persona, it is out of scope.
+Large organizations seeking role-based access controls, complex approval workflows, compliance matrices, and 47 customizable fields.  
+*Decision Rule*: **REJECT** any feature that ONLY serves this persona. If a feature serves BOTH Anti-Persona AND Primary Users (e.g., simple team permissions), evaluate it through the Strategic Trade-offs rules. Complexity is only acceptable if it solves a Primary User problem first.
 
 ## UX Guardrails
 
@@ -119,16 +129,20 @@ Every screen must have a designed "Empty State" that:
 
 ## Success Definitions (KPIs)
 
-These metrics define whether ProductKit is delivering on its mission:
+These metrics define whether Product-Kit is delivering on its mission:
 
 **Primary Metric: Specification Quality**  
-Measured by the reduction in rework cycles. Goal: 90% of specs require zero clarification questions during implementation (within the first sprint).
+Measured by the reduction in rework cycles. Goal: 90% of specs require zero clarification questions during implementation (within the first sprint).  
+*How we measure*: Post-implementation survey asking developers: "Did you need to ask for clarification on this spec?" Track clarification questions in support tickets.
 
 **Secondary Metric: Handoff Time**  
-Time from initial customer insight documentation to complete, approved specification. Target: < 2 hours for a typical feature.
+Time from initial customer insight documentation to complete, approved specification. Target: < 2 hours for a typical feature.  
+*Definition*: "Typical feature" = 1–2 customer insights, 3–5 requirements, 2–3 acceptance criteria.  
+*How we measure*: Timestamp insights created → spec marked "approved" in Product-Kit. Calculate median time across all new specs each month.
 
 **Tertiary Metric: User Adoption Rate**  
-Percentage of teams completing at least one full workflow (insight → spec → task list) within the first 7 days of signup. Target: > 60%.
+Percentage of teams completing at least one full workflow (insight → spec → task list) within the first 7 days of signup. Target: > 60%.  
+*How we measure*: In-app event tracking: teams that reach "task list created" status within 7 days of first login.
 
 ## Governance
 
@@ -141,6 +155,9 @@ This constitution is binding. All decisions, features, and processes must align 
 - **MINOR**: New section added, pillar guidance significantly expanded, or new guardrails established.
 - **PATCH**: Clarifications, wording, or examples refined without changing intent.
 
-**Compliance Review**: All PRs and specifications are reviewed for alignment with core principles and pillars. Violations block merge until resolved.
+**Compliance Review**: All PRs and specifications are reviewed for alignment with core principles and pillars. Violations block merge until resolved.  
+*Who reviews*: Any core team member (dev lead, product lead, or designer) can flag violations.  
+*Violation types*: (1) Feature or requirement lacks customer insight justification. (2) Spec has vague language (see Principle III). (3) Introduces complexity that doesn't solve a Primary User problem. (4) Skips anti-persona decision rule.  
+*Checklist*: Reviewer confirms: ✓ Linked to customer insight, ✓ Acceptance criteria are testable, ✓ No unresolved ambiguity, ✓ Pillar alignment documented.
 
 **Version**: 1.1.0 | **Ratified**: 2026-03-04 | **Last Amended**: 2026-03-04

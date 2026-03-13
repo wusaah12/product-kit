@@ -67,7 +67,7 @@ Each stage builds on the previous one, with clear handoff criteria and AI-assist
 Document your core assumption in the form:
 > "If we [build feature X] for [specific persona], then [measurable outcome Z] will happen."
 
-**Files:** `.specify/.product-kit/active_specs/*_hypothesis.md`
+**Files:** `.product-kit/active_specs/*_hypothesis.md`
 
 ### Stage 2: PRD (Product Requirements Document)
 Transform the hypothesis into a detailed requirements document with:
@@ -77,7 +77,7 @@ Transform the hypothesis into a detailed requirements document with:
 - Success metrics and KPIs
 - Out-of-scope items
 
-**Files:** `.specify/.product-kit/active_specs/*_prd.md`
+**Files:** `.product-kit/active_specs/*_prd.md`
 
 ### Stage 3: Specification (spec.md)
 Deep dive into implementation details:
@@ -111,22 +111,22 @@ Execute tasks and validate against specs.
 ```
 product-kit/
 ├── README.md                          # This file
+├── .product-kit/                      # ProductKit definition
+│   ├── product_constitution.md        # Core values, pillars, trade-offs
+│   ├── active_specs/                  # Active project specifications
+│   │   ├── data_scientist_git_hypothesis.md
+│   │   ├── workout_logger_hypothesis.md
+│   │   └── workout_logger_prd.md
+│   └── templates/                     # Reusable specification templates
+│       ├── hypothesis-template.md    # Hypothesis template
+│       ├── prd-template.md            # PRD template
+│       ├── spec-template.md           # Detailed spec template
+│       ├── plan-template.md           # Implementation plan template
+│       ├── tasks-template.md          # Task list template
+│       ├── checklist-template.md      # Feature checklist template
+│       ├── constitution-template.md
+│       └── agent-file-template.md     # Development guidelines
 ├── .specify/                          # Specification framework directory
-│   ├── .product-kit/                  # ProductKit definition
-│   │   ├── product_constitution.md    # Core values, pillars, trade-offs
-│   │   ├── active_specs/              # Active project specifications
-│   │   │   ├── data_scientist_git_hypothesis.md
-│   │   │   ├── workout_logger_hypothesis.md
-│   │   │   └── workout_logger_prd.md
-│   │   └── templates/                 # Reusable specification templates
-│   │       ├── hypothesis.md          # Hypothesis template
-│   │       ├── prd_template.md        # PRD template
-│   │       ├── spec-template.md       # Detailed spec template
-│   │       ├── plan-template.md       # Implementation plan template
-│   │       ├── tasks-template.md      # Task list template
-│   │       ├── checklist-template.md  # Feature checklist template
-│   │       ├── constitution-template.md
-│   │       └── agent-file-template.md # Development guidelines
 │   ├── templates/                     # Global templates
 │   │   └── [shared templates]
 │   └── notes/                         # Project documentation
@@ -218,7 +218,7 @@ The foundation of ProductKit. Defines:
 - **Target Personas:** Who ProductKit serves
 - **Anti-Personas:** Who we explicitly do NOT serve
 
-**File:** `.specify/.product-kit/product_constitution.md`
+**File:** `.product-kit/product_constitution.md`
 
 ### **Templates**
 Starting points for specifications at each stage:
@@ -229,14 +229,14 @@ Starting points for specifications at each stage:
 - **Tasks Template:** Actionable task list with dependencies
 - **Checklist Template:** Quality gates and validation steps
 
-**Directory:** `.specify/.product-kit/templates/`
+**Directory:** `.product-kit/templates/`
 
 ### **Active Specifications**
 Real projects in various stages:
 - **Data Scientist Git Tool** (Discovery stage)
 - **Workout Logger** (In Review)
 
-**Directory:** `.specify/.product-kit/active_specs/`
+**Directory:** `.product-kit/active_specs/`
 
 ---
 
@@ -247,8 +247,8 @@ Real projects in various stages:
 1. **Create a Hypothesis**
    ```bash
    # Copy the hypothesis template
-   cp .specify/.product-kit/templates/hypothesis.md \
-      .specify/.product-kit/active_specs/my_project_hypothesis.md
+   cp .product-kit/templates/hypothesis-template.md \
+      .product-kit/active_specs/my_project_hypothesis.md
    ```
    
    Fill in:
@@ -261,8 +261,8 @@ Real projects in various stages:
 2. **Write a PRD**
    ```bash
    # Copy the PRD template
-   cp .specify/.product-kit/templates/prd_template.md \
-      .specify/.product-kit/active_specs/my_project_prd.md
+   cp .product-kit/templates/prd-template.md \
+      .product-kit/active_specs/my_project_prd.md
    ```
    
    Use the **speckit.specify** agent to transform your hypothesis into a detailed PRD:
@@ -349,10 +349,10 @@ Helping data scientists feel comfortable with Git through training, tooling, or 
 ## 🛠️ Customization & Extension
 
 ### **Adapt the Constitution**
-Edit `.specify/.product-kit/product_constitution.md` to define your organization's values, pillars, and trade-offs. All other templates will align to it.
+Edit `.product-kit/product_constitution.md` to define your organization's values, pillars, and trade-offs. All other templates will align to it.
 
 ### **Create Custom Templates**
-Add new templates to `.specify/.product-kit/templates/` for specialized document types (e.g., security review, data model spec).
+Add new templates to `.product-kit/templates/` for specialized document types (e.g., security review, data model spec).
 
 ### **Integrate with Your Workflow**
 ProductKit specs integrate seamlessly with:
@@ -416,10 +416,10 @@ ProductKit evolves through feedback. To improve it:
 
 ## 📖 Further Reading
 
-- **[Product Constitution](./.specify/.product-kit/product_constitution.md):** Core values and principles
-- **[Hypothesis Template](./.specify/.product-kit/templates/hypothesis.md):** How to capture assumptions
-- **[PRD Template](./.specify/.product-kit/templates/prd_template.md):** How to write requirements
-- **[Tasks Template](./.specify/.product-kit/templates/tasks-template.md):** How to break work into actionable steps
+- **[Product Constitution](./.product-kit/product_constitution.md):** Core values and principles
+- **[Hypothesis Template](./.product-kit/templates/hypothesis-template.md):** How to capture assumptions
+- **[PRD Template](./.product-kit/templates/prd-template.md):** How to write requirements
+- **[Tasks Template](./.product-kit/templates/tasks-template.md):** How to break work into actionable steps
 
 ---
 

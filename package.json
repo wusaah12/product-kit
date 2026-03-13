@@ -1,0 +1,14 @@
+{
+  "name": "product-kit",
+  "version": "1.0.0",
+  "description": "A framework for turning ideas into shipped products",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["product", "lifecycle", "management"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {}
+}</content>
+<parameter name="filePath">c:\Users\jzwu8\source\repos\product-kit\package.json
